@@ -14,7 +14,7 @@ const toEmail = "jarvix.agent@protonmail.com"; // fallback for GitHub Pages
 
   <div class="card">
     <h2>Bericht sturen</h2>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="contact" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
       <p style="display:none">
         <label>Laat dit veld leeg <input name="bot-field" /></label>
