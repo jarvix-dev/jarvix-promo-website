@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-const bookingUrl = "#"; // TODO: fill (Calendly)
+const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Intake%20aanvraag"; // TODO: replace with Calendly booking URL
 const toEmail = "jarvix.agent@protonmail.com"; // fallback for GitHub Pages
 ---
 <Base title="Contact — JARVIX" description="Plan een intake of stuur een bericht.">
   <h1>Contact</h1>
-  <p class="muted">Plan een korte intake of stuur je vraag. (Formulier wordt bij hosting op Netlify omgezet naar Netlify Forms.)</p>
+  <p class="muted">Plan een korte intake of stuur je vraag. Totdat Netlify (Forms) of een form-backend is ingesteld, loopt contact via e-mail.</p>
 
   <div class="row" style="margin: 12px 0 18px">
     <a class="btn" href={bookingUrl}>Plan een intake</a>
@@ -14,8 +14,11 @@ const toEmail = "jarvix.agent@protonmail.com"; // fallback for GitHub Pages
 
   <div class="card">
     <h2>Bericht sturen</h2>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none">
+        <label>Laat dit veld leeg <input name="bot-field" /></label>
+      </p>
       <div class="row">
         <div>
           <label for="name">Naam</label>
