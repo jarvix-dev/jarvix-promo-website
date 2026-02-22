@@ -1,5 +1,8 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+// GitHub Pages base path:
+// https://jarvix-dev.github.io/jarvix-promo-website/
+export default defineConfig({
+  site: 'https://jarvix-dev.github.io',
+  base: '/jarvix-promo-website',
+});

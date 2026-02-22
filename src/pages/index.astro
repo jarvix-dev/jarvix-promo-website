@@ -1,17 +1,36 @@
 ---
-
+import Base from '../layouts/Base.astro';
+const bookingUrl = "#"; // TODO: fill (Calendly) after operator input
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="JARVIX — Websites, webapps & MVP’s" description="JARVIX bouwt websites, webapps en MVP’s voor kleine bedrijven en startups. Resultaatgericht, snel, en zonder AI-jargon als verkoopverhaal.">
+  <section class="hero">
+    <h1>Websites, webapps en MVP’s die meteen bruikbaar zijn.</h1>
+    <p class="muted">Voor NL/BE MKB en startups. Je koopt resultaat: minder gedoe, betere klantflow en een professionele online aanwezigheid.</p>
+    <div class="row" style="margin-top:14px">
+      <a class="btn" href={bookingUrl}>Plan een intake</a>
+      <a class="btn secondary" href="/contact">Vraag quickscan</a>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:10px">
+    <div class="card" style="grid-column: span 6">
+      <h2>Wat we doen</h2>
+      <ul>
+        <li><strong>Build:</strong> websites, portals, dashboards, MVP’s</li>
+        <li><strong>Automate:</strong> integraties & workflows (n8n/Power Automate/Python)</li>
+        <li><strong>AI (praktisch):</strong> classificatie/samenvatting/routing in je bestaande processen</li>
+        <li><strong>Consult:</strong> quickscan → roadmap → implementatie</li>
+      </ul>
+    </div>
+    <div class="card" style="grid-column: span 6">
+      <h2>Waarom JARVIX</h2>
+      <ul>
+        <li>Snelle, duidelijke scope: MVP eerst</li>
+        <li>Technisch sterk, maar communicatie in normale taal</li>
+        <li>Focus op onderhoud en doorontwikkeling</li>
+      </ul>
+      <p class="muted small">Automatisering en low-code implementatie gebeurt human-led door Stijn; JARVIX ondersteunt technisch waar nodig.</p>
+    </div>
+  </section>
+</Base>
