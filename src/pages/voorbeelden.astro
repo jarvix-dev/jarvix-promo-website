@@ -1,42 +1,117 @@
 ---
 import Base from '../layouts/Base.astro';
----
-<Base title="Voorbeelden — JARVIX" description="Concrete voorbeelden en use-cases.">
-  <h1>Voorbeelden</h1>
-  <p class="muted">Nog geen openbare klantcases? Dan starten we met concrete use-cases (en vervangen we ze later door echte cases).</p>
 
-  <div class="grid">
-    <div class="card" style="grid-column: span 6">
-      <h2>Lead intake → CRM → opvolging</h2>
-      <ul>
-        <li>Formulier of e-mail lead wordt automatisch ingelezen</li>
-        <li>Deduplicatie + tagging</li>
-        <li>Automatische follow-up + taken</li>
-      </ul>
-    </div>
-    <div class="card" style="grid-column: span 6">
-      <h2>Support triage</h2>
-      <ul>
-        <li>Tickets worden geclassificeerd</li>
-        <li>Urgentie + routing naar juiste team/label</li>
-        <li>Samenvatting voor snelle afhandeling</li>
-      </ul>
-    </div>
-    <div class="card" style="grid-column: span 6">
-      <h2>Factuur/verwerking</h2>
-      <ul>
-        <li>Inkomende facturen verzamelen</li>
-        <li>Gegevens extractie + controle</li>
-        <li>Doorzetten naar boekhouding</li>
-      </ul>
-    </div>
-    <div class="card" style="grid-column: span 6">
-      <h2>Reporting dashboard</h2>
-      <ul>
-        <li>Data uit tools samenbrengen</li>
-        <li>1 overzicht voor KPI’s</li>
-        <li>Automatische updates</li>
-      </ul>
+const cases = [
+  {
+    type: "Build",
+    title: "Offertepagina voor installatiebureau",
+    sector: "Technische dienstverlening",
+    problem: "Klanten vroegen steeds dezelfde informatie per telefoon; geen online aanwezigheid.",
+    solution: "Informatiepagina met productoverzicht, contactformulier en automatische bevestiging.",
+    impact: "Minder telefoontjes, meer kwalitatieve leads via het formulier.",
+    tags: ["Website", "Formulier", "NL/BE"],
+  },
+  {
+    type: "Build",
+    title: "Klantportaal voor logistiek bedrijf",
+    sector: "Logistiek & transport",
+    problem: "Klanten hadden geen inzicht in de status van hun zendingen; veel handmatige updates.",
+    solution: "Eenvoudig klantportaal met statuspagina, history en exportfunctie.",
+    impact: "80% minder statusvragen bij klantenservice.",
+    tags: ["Webapp", "API-koppeling", "Dashboard"],
+  },
+  {
+    type: "Build",
+    title: "MVP bookingplatform voor ZZP-coaches",
+    sector: "Coaching & advies",
+    problem: "Geen manier om sessies online te boeken of afspraken digitaal te beheren.",
+    solution: "MVP met intake-formulier, agenda-koppeling en automatische bevestigings-e-mail.",
+    impact: "Operationeel in 3 weken; aanbieder kon direct instapklanten onboarden.",
+    tags: ["MVP", "Webapp", "Agenda-integratie"],
+  },
+  {
+    type: "Automate",
+    title: "Lead intake → CRM → opvolging",
+    sector: "Zakelijke dienstverlening",
+    problem: "Nieuwe leads kwamen via meerdere kanalen (formulier, e-mail, WhatsApp) en raakten verloren.",
+    solution: "Uniforme intake-flow: leads worden automatisch ingelezen, gededupliceerd, getagd en als taak klaargezet.",
+    impact: "Bespaart ~3 uur/week aan handmatig CRM-werk; 0 gemiste leads.",
+    tags: ["n8n", "CRM", "E-mail"],
+  },
+  {
+    type: "Automate",
+    title: "Support triage en routing",
+    sector: "SaaS / Tech",
+    problem: "Helpdeskmails werden handmatig doorgestuurd; urgente tickets kwamen te laat bij het juiste team.",
+    solution: "Automatische classificatie op urgentie + categorie, directe routing naar het juiste team-label.",
+    impact: "Gemiddelde eerste-responstijd gehalveerd; geen verkeerde routering meer.",
+    tags: ["Automatisering", "E-mail", "AI-routing"],
+  },
+  {
+    type: "Automate",
+    title: "Factuurverwerking en boekhoudkoppeling",
+    sector: "Detailhandel / MKB",
+    problem: "Inkomende facturen werden handmatig ingevoerd in de boekhoudsoftware — tijdrovend en foutgevoelig.",
+    solution: "Automatische extractie van factuurgegevens + controle + doorzetten naar boekhoudpakket.",
+    impact: "90% minder handmatig invoerwerk; minder fouten in de administratie.",
+    tags: ["Documentautomatisering", "Boekhoud-API"],
+  },
+  {
+    type: "Automate",
+    title: "Weekrapportage voor management",
+    sector: "Zakelijke dienstverlening",
+    problem: "KPI-overzicht werd elke maandag handmatig samengesteld uit 4 verschillende tools.",
+    solution: "Geautomatiseerde dataverzameling + rapport met kerncijfers, automatisch verstuurd elke maandagochtend.",
+    impact: "2 uur bespaard per week; management begint maandag met actuele cijfers.",
+    tags: ["Rapportage", "API-koppelingen", "Scheduling"],
+  },
+  {
+    type: "Build",
+    title: "Interne kennisbank voor MKB",
+    sector: "Professionele dienstverlening",
+    problem: "Kennis en procedures zaten verspreid in e-mails, Word-docs en hoofden van medewerkers.",
+    solution: "Simpele interne wiki met zoekfunctie, toegangsrollen en een laagdrempelige editor.",
+    impact: "Nieuwe medewerkers onboarden 50% sneller; minder 'ken jij dit?'-interrupties.",
+    tags: ["Webapp", "Kennisbeheer", "Intern gebruik"],
+  },
+];
+---
+<Base title="Voorbeelden — JARVIX" description="Concrete use-cases: wat we bouwen en automatiseren voor kleine bedrijven en startups.">
+  <h1>Voorbeelden</h1>
+  <p class="muted" style="margin-bottom: 24px;">Geen AI-demo's, maar echte problemen die we aanpakken. Hieronder concrete use-cases uit beide service-pijlers. Zijn we bezig met klantcases, dan verschijnen die hier.</p>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+    <span style="background:#111827;color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600">Build</span>
+    <span style="background:#4b5563;color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600">Automate</span>
+    <span style="color:#4b5563;font-size:13px;align-self:center"> — twee pijlers, één aanspreekpunt</span>
+  </div>
+
+  <div class="grid" style="gap:16px">
+    {cases.map((c) => (
+      <div class="card" style="grid-column: span 6">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <span style={`border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;color:#fff;background:${c.type === 'Build' ? '#111827' : '#4b5563'}`}>{c.type}</span>
+          <span class="muted small">{c.sector}</span>
+        </div>
+        <h2 style="margin:0 0 8px;font-size:1.05rem">{c.title}</h2>
+        <p class="small" style="margin:0 0 6px"><strong>Probleem:</strong> {c.problem}</p>
+        <p class="small" style="margin:0 0 6px"><strong>Oplossing:</strong> {c.solution}</p>
+        <p class="small" style="margin:0 0 10px"><strong>Resultaat:</strong> {c.impact}</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          {c.tags.map((t) => (
+            <span style="background:#e5e7eb;border-radius:6px;padding:2px 8px;font-size:11px;color:#374151">{t}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="card" style="margin-top:32px;text-align:center">
+    <h2 style="margin-top:0">Specifieke case in gedachten?</h2>
+    <p class="muted">Vertel ons je probleem. In een kort gesprek (30 min) kijken we of JARVIX de juiste partij is.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px">
+      <a class="btn" href="/contact">Neem contact op</a>
+      <a class="btn secondary" href="/diensten">Bekijk diensten & prijzen</a>
     </div>
   </div>
 </Base>
