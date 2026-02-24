@@ -1,56 +1,69 @@
 ---
 import Base from '../layouts/Base.astro';
+const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Intake%20aanvraag";
 ---
-<Base title="Diensten — JARVIX" description="Diensten: Build, Automate, AI, Consult.">
-  <h1>Diensten</h1>
+<Base title="Diensten & Prijzen — JARVIX" description="Wat bouwt JARVIX en wat kost het? Websites, automatisering, webapps — vaste prijs voor MKB.">
+  <h1>Diensten & Prijzen</h1>
+
   <div class="card" style="margin: 12px 0 18px">
-    <h2>Prijsindicatie (richtlijnen)</h2>
+    <h2>Wat kost het?</h2>
     <ul>
-      <li><strong>Website (MVP):</strong> €1.500 – €4.000</li>
-      <li><strong>Webapp / dashboard (MVP):</strong> €4.000 – €15.000</li>
-      <li><strong>Automatisering quickscan:</strong> €350 – €750</li>
-      <li><strong>Automatisering implementatie:</strong> €750 – €2.500</li>
-      <li><strong>Onderhoud / retainer:</strong> vanaf €250/maand (afhankelijk van scope)</li>
+      <li><strong>Website (professioneel, mobiel, snel):</strong> €1.500 – €4.000</li>
+      <li><strong>Webapplicatie of klantenportaal:</strong> €4.000 – €15.000</li>
+      <li><strong>Automatisering — analyse:</strong> €350 – €750</li>
+      <li><strong>Automatisering — implementatie:</strong> €750 – €2.500</li>
+      <li><strong>Onderhoud & updates:</strong> vanaf €250/maand</li>
     </ul>
-    <p class="muted small">Definitieve prijs hangt af van scope, integraties en gewenste doorlooptijd.</p>
+    <p class="muted small">Vaste prijs, geen verrassingen. Definitieve prijs na een kort gesprek over uw specifieke wens.</p>
   </div>
 
   <div class="grid">
     <div class="card" style="grid-column: span 6">
-      <h2>Build</h2>
-      <p class="muted">Websites, webapps, dashboards, portals en MVP’s.</p>
+      <h2>🌐 Website</h2>
+      <p class="muted">Professionele website die nieuwe klanten aantrekt en uw bedrijf goed neerzet.</p>
       <ul>
-        <li>Snelle MVP + iteraties</li>
-        <li>SEO & performance basics</li>
-        <li>Onderhoud & uitbreidingen</li>
+        <li>Modern design, mobiel & snel</li>
+        <li>Aanvraag- of contactformulier</li>
+        <li>Vindbaar op Google (basis SEO)</li>
+        <li>Onderhoud & updates op maat</li>
       </ul>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>Automate</h2>
-      <p class="muted">Workflows en integraties die tijd besparen en fouten verminderen.</p>
+      <h2>⚙️ Automatisering</h2>
+      <p class="muted">Terugkerend handmatig werk automatiseren zodat u meer tijd hebt voor uw klanten.</p>
       <ul>
-        <li>n8n / Power Automate / Zapier</li>
-        <li>API koppelingen</li>
+        <li>Afspraken & bevestigingen</li>
+        <li>Offertes & facturen</li>
+        <li>Koppelingen tussen uw tools</li>
         <li>E-mail & notificaties</li>
       </ul>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>AI (praktisch)</h2>
-      <p class="muted">AI als onderdeel van je workflow, niet als losse gimmick.</p>
+      <h2>🖥️ Webapplicatie</h2>
+      <p class="muted">Maatwerk digitaal hulpmiddel voor uw team of klanten — meer dan een gewone website.</p>
       <ul>
-        <li>Ticket/lead routing</li>
-        <li>Samenvattingen & classificatie</li>
-        <li>Document drafting (met review)</li>
+        <li>Klantportaal of ledensectie</li>
+        <li>Dashboard voor uw team</li>
+        <li>Aanvraag- of planningsplatform</li>
       </ul>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>Consult</h2>
-      <p class="muted">Quickscan → roadmap → implementatie.</p>
+      <h2>🔍 Quickscan</h2>
+      <p class="muted">Geen idee waar te beginnen? We kijken samen naar uw situatie en geven concreet advies.</p>
       <ul>
-        <li>Scope & prioritering</li>
-        <li>ROI-inschatting</li>
-        <li>Concrete first steps</li>
+        <li>30 minuten, gratis</li>
+        <li>Concrete vervolgstap(pen)</li>
+        <li>Geen verplichtingen</li>
       </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:28px; text-align:center">
+    <h2 style="margin-top:0">Niet zeker welke dienst bij u past?</h2>
+    <p class="muted">Vertel ons uw situatie. In 15 minuten weten we al of en hoe JARVIX u kan helpen.</p>
+    <div style="margin-top:14px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href={bookingUrl}>Plan een gratis intake</a>
+      <a class="btn secondary" href="/contact">Stuur een bericht</a>
     </div>
   </div>
 </Base>
