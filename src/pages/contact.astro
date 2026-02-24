@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Intake%20aanvraag"; // TODO: replace with Calendly booking URL
-const toEmail = "jarvix.agent@protonmail.com"; // fallback for GitHub Pages
+const toEmail = "jarvix.agent@protonmail.com";
 ---
 <Base title="Contact — JARVIX" description="Plan een intake of stuur een bericht.">
   <h1>Contact</h1>
-  <p class="muted">Plan een korte intake of stuur je vraag. Totdat Netlify (Forms) of een form-backend is ingesteld, loopt contact via e-mail.</p>
+  <p class="muted">Plan een korte intake of stuur je vraag.</p>
 
   <div class="row" style="margin: 12px 0 18px">
     <a class="btn" href={bookingUrl}>Plan een intake</a>
@@ -14,36 +14,63 @@ const toEmail = "jarvix.agent@protonmail.com"; // fallback for GitHub Pages
 
   <div class="card">
     <h2>Bericht sturen</h2>
-    <form name="contact" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact" />
-      <p style="display:none">
-        <label>Laat dit veld leeg <input name="bot-field" /></label>
-      </p>
+    <form id="contact-form">
       <div class="row">
         <div>
           <label for="name">Naam</label>
-          <input id="name" name="name" required />
+          <input id="name" name="name" required autocomplete="name" />
         </div>
         <div>
           <label for="company">Bedrijf</label>
-          <input id="company" name="company" />
+          <input id="company" name="company" autocomplete="organization" />
         </div>
       </div>
       <div class="row">
         <div>
           <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" required />
+          <input id="email" name="email" type="email" required autocomplete="email" />
         </div>
         <div>
           <label for="phone">Telefoon (optioneel)</label>
-          <input id="phone" name="phone" />
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
         </div>
       </div>
       <label for="message">Bericht</label>
       <textarea id="message" name="message" required></textarea>
 
       <button class="btn" type="submit" style="margin-top:10px">Versturen</button>
-      <p class="muted small">Let op: zonder Netlify hosting werkt dit formulier niet end-to-end. Als tijdelijke fallback kun je mailen via de knop hierboven.</p>
+      <p class="muted small" id="form-note">Versturen opent je e-mailclient met het bericht ingevuld. Zo weten we zeker dat jouw aanvraag aankomt.</p>
     </form>
+
+    <div id="form-success" style="display:none; padding:16px 0">
+      <p>✅ Je e-mailclient is geopend met je bericht. Stuur de mail vanuit je e-mailprogramma om de aanvraag af te ronden.</p>
+      <p class="muted small">Geen e-mailclient geopend? Stuur direct een mail naar <a href={`mailto:${toEmail}`}>{toEmail}</a>.</p>
+    </div>
   </div>
+
+  <script define:vars={{ toEmail }}>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Contactaanvraag via jarvix-promo — ' + name + (company ? ' (' + company + ')' : ''));
+      const body = encodeURIComponent(
+        'Naam: ' + name + '\n' +
+        'Bedrijf: ' + (company || '—') + '\n' +
+        'E-mail: ' + email + '\n' +
+        'Telefoon: ' + (phone || '—') + '\n\n' +
+        'Bericht:\n' + message
+      );
+
+      window.location.href = 'mailto:' + toEmail + '?subject=' + subject + '&body=' + body;
+
+      // Show success note
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    });
+  </script>
 </Base>
