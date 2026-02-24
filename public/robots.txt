@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jarvix-dev.github.io/jarvix-promo-website/sitemap-index.xml
