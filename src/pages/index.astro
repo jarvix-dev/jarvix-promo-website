@@ -3,13 +3,13 @@ import Base from '../layouts/Base.astro';
 const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Intake%20aanvraag"; // TODO: replace with Calendly booking URL
 ---
 
-<Base title="JARVIX — Websites, webapps & MVP’s" description="JARVIX bouwt websites, webapps en MVP’s voor kleine bedrijven en startups. Resultaatgericht, snel, en zonder AI-jargon als verkoopverhaal.">
+<Base title="JARVIX — Websites, webapps & MVP's" description="JARVIX bouwt websites, webapps en MVP's voor kleine bedrijven en startups. Resultaatgericht, snel, en zonder AI-jargon als verkoopverhaal.">
   <section class="hero">
-    <h1>Websites, webapps en MVP’s die meteen bruikbaar zijn.</h1>
-    <p class="muted">Voor NL/BE MKB en startups. Je koopt resultaat: minder gedoe, betere klantflow en een professionele online aanwezigheid.</p>
+    <h1>Meer aanvragen. Minder gedoe. Een website die voor je werkt.</h1>
+    <p class="muted">JARVIX bouwt websites, webapps en automatiseringen voor NL/BE MKB. Snel, duidelijk, en zonder jargon. Je koopt resultaat.</p>
     <div class="row" style="margin-top:14px">
-      <a class="btn" href={bookingUrl}>Plan een intake</a>
-      <a class="btn secondary" href="/contact">Vraag quickscan</a>
+      <a class="btn" href={bookingUrl}>Plan een gratis intake</a>
+      <a class="btn secondary" href="/contact">Stuur een bericht</a>
     </div>
   </section>
 
@@ -17,20 +17,26 @@ const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Intake%20aanvraag
     <div class="card" style="grid-column: span 6">
       <h2>Wat we doen</h2>
       <ul>
-        <li><strong>Build:</strong> websites, portals, dashboards, MVP’s</li>
-        <li><strong>Automate:</strong> integraties & workflows (n8n/Power Automate/Python)</li>
-        <li><strong>AI (praktisch):</strong> classificatie/samenvatting/routing in je bestaande processen</li>
-        <li><strong>Consult:</strong> quickscan → roadmap → implementatie</li>
+        <li><strong>Website of webshop:</strong> professioneel, mobiel en snel</li>
+        <li><strong>Aanvraag- en contactformulieren:</strong> klanten kunnen je online bereiken</li>
+        <li><strong>Webapps & dashboards:</strong> voor interne processen of klantenportalen</li>
+        <li><strong>Automatisering:</strong> minder handmatig werk, meer tijd voor de klant</li>
       </ul>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>Waarom JARVIX</h2>
+      <h2>Waarom JARVIX?</h2>
       <ul>
-        <li>Snelle, duidelijke scope: MVP eerst</li>
-        <li>Technisch sterk, maar communicatie in normale taal</li>
-        <li>Focus op onderhoud en doorontwikkeling</li>
+        <li>✅ Vaste prijs — geen verrassingen achteraf</li>
+        <li>✅ Snel opgeleverd — MVP eerst, daarna uitbreiden</li>
+        <li>✅ Duidelijke communicatie — geen vakjargon</li>
+        <li>✅ Onderhoud inbegrepen op maat</li>
       </ul>
-      <p class="muted small">Automatisering en low-code implementatie gebeurt human-led door Stijn; JARVIX ondersteunt technisch waar nodig.</p>
+      <p class="muted small" style="margin-top:10px">Werkgebied: Nederland & België. Gericht op bedrijven tot 50 medewerkers.</p>
     </div>
+  </section>
+
+  <section style="margin-top: 20px; text-align:center">
+    <a class="btn secondary" href="/voorbeelden" style="margin-right:10px">Bekijk voorbeelden</a>
+    <a class="btn secondary" href="/diensten">Prijzen & diensten</a>
   </section>
 </Base>

@@ -1,24 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
+const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Intake%20aanvraag";
 ---
-<Base title="Werkwijze — JARVIX" description="Intake → plan → build → iterate.">
-  <h1>Werkwijze</h1>
+<Base title="Werkwijze — JARVIX" description="Zo werken we: van eerste gesprek tot opgeleverd resultaat.">
+  <h1>Zo werken we</h1>
+  <p class="muted" style="margin-bottom:24px">Van eerste gesprek tot werkend resultaat — zonder verrassingen.</p>
+
   <div class="grid">
     <div class="card" style="grid-column: span 6">
-      <h2>1) Intake</h2>
-      <p class="muted">Kort gesprek: doel, context, constraints, succescriteria.</p>
+      <h2>1. Intake (gratis)</h2>
+      <p class="muted">Kort gesprek van 15–30 minuten. We luisteren naar wat je nodig hebt, wat er nu niet werkt, en wat je wil bereiken. Geen verkoopverhaal.</p>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>2) Plan</h2>
-      <p class="muted">We maken scope en keuzes expliciet (wat wel/niet). Daarna: acceptatiecriteria.</p>
+      <h2>2. Voorstel</h2>
+      <p class="muted">Je krijgt een concreet voorstel: wat we bouwen, wat het kost, wanneer het klaar is. Vaste prijs, geen open einde.</p>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>3) Build</h2>
-      <p class="muted">Snelle MVP + iteraties. Focus op betrouwbaarheid en onderhoudbaarheid.</p>
+      <h2>3. Bouwen</h2>
+      <p class="muted">We beginnen direct. Tussentijds houd je alles bij via korte updates. Geen maanden wachten — we leveren snel op en verbeteren daarna.</p>
     </div>
     <div class="card" style="grid-column: span 6">
-      <h2>4) Iterate</h2>
-      <p class="muted">Na launch: meten, verbeteren, uitbreiden — op basis van echte feedback.</p>
+      <h2>4. Oplevering & doorgroei</h2>
+      <p class="muted">Na oplevering: je kan het gebruiken en we regelen het onderhoud. Wil je later uitbreiden? Dan staat de basis er al.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <h2 style="margin-top:0">Wat kost het?</h2>
+    <p class="muted">Een eenvoudige website start vanaf <strong>€1.500</strong>. Automatisering of een webapplicatie vanaf <strong>€750</strong>. Onderhoud op maat. Bekijk onze <a href="/diensten">diensten & prijzen</a> voor meer detail.</p>
+    <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href={bookingUrl}>Plan een gratis intake</a>
+      <a class="btn secondary" href="/contact">Stel een vraag</a>
     </div>
   </div>
 </Base>
