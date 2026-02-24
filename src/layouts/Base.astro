@@ -1,13 +1,33 @@
 ---
-const { title = 'JARVIX', description = '' } = Astro.props;
+const {
+  title = 'JARVIX',
+  description = 'JARVIX bouwt professionele websites, webapps en automatiseringen voor NL/BE MKB. Vaste prijs, snel opgeleverd, zonder jargon.',
+} = Astro.props;
+
+const siteUrl = 'https://jarvix-dev.github.io/jarvix-promo-website';
+const canonicalUrl = siteUrl + Astro.url.pathname.replace('/jarvix-promo-website', '') || '/';
 ---
 <!doctype html>
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph (Discord, LinkedIn, WhatsApp previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="JARVIX" />
+    <meta property="og:locale" content="nl_NL" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/jarvix-promo-website/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/jarvix-promo-website/favicon.ico" />
+
     <style>
       :root{--fg:#0b1220;--muted:#4b5563;--bg:#ffffff;--card:#f7f7f8;--line:#e5e7eb;--accent:#111827}
       body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--fg);background:var(--bg);line-height:1.5}
@@ -38,12 +58,12 @@ const { title = 'JARVIX', description = '' } = Astro.props;
       <div class="container">
         <nav>
           <span class="brand">JARVIX</span>
-          <a href="/">Home</a>
-          <a href="/diensten">Diensten</a>
-          <a href="/voorbeelden">Voorbeelden</a>
-          <a href="/werkwijze">Werkwijze</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/jarvix-promo-website/">Home</a>
+          <a href="/jarvix-promo-website/diensten">Diensten</a>
+          <a href="/jarvix-promo-website/voorbeelden">Voorbeelden</a>
+          <a href="/jarvix-promo-website/werkwijze">Werkwijze</a>
+          <a href="/jarvix-promo-website/contact">Contact</a>
+          <a href="/jarvix-promo-website/privacy">Privacy</a>
         </nav>
       </div>
     </header>
@@ -54,8 +74,8 @@ const { title = 'JARVIX', description = '' } = Astro.props;
 
     <footer>
       <div class="container small muted">
-        <p><strong>JARVIX</strong> — websites, webapps en MVP’s voor NL/BE MKB. Automatisering en low-code implementatie: Stijn (human-led).</p>
-        <p class="muted">© {new Date().getFullYear()} JARVIX</p>
+        <p><strong>JARVIX</strong> — websites, webapps en automatiseringen voor MKB in Nederland en België. Vaste prijs, snel opgeleverd.</p>
+        <p class="muted">© {new Date().getFullYear()} JARVIX &nbsp;·&nbsp; <a href="/jarvix-promo-website/privacy" style="color:inherit">Privacy</a> &nbsp;·&nbsp; <a href="mailto:jarvix.agent@protonmail.com" style="color:inherit">jarvix.agent@protonmail.com</a></p>
       </div>
     </footer>
   </body>
