@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+const bookingUrl = "mailto:jarvix.agent@protonmail.com?subject=Quickscan%20aanvraag";
+---
+<Base
+  title="Gratis Quickscan — JARVIX"
+  description="Vraag een gratis procesanalyse aan. In 30 minuten weet u precies waar tijdwinst zit en wat automatisering kost. Geen verplichtingen."
+>
+  <section class="hero">
+    <h1>Gratis quickscan — weet in 30 minuten wat u bespaart</h1>
+    <p class="muted">Geen offerte die u nergens aan verplicht. Gewoon een eerlijk gesprek over uw werkproces en wat er concreet te verbeteren valt.</p>
+    <div class="row" style="margin-top:16px">
+      <a class="btn" href={bookingUrl}>Vraag een quickscan aan</a>
+    </div>
+  </section>
+
+  <div class="grid" style="margin-top:8px">
+    <div class="card" style="grid-column: span 12">
+      <h2 style="margin-top:0">Wat krijgt u?</h2>
+      <div class="grid" style="gap:12px;margin-top:8px">
+        <div style="grid-column: span 4; border-left: 3px solid #111827; padding-left: 14px;">
+          <strong>① Uw huidige proces in kaart</strong>
+          <p class="muted small" style="margin:6px 0 0">We kijken samen naar wat u nu doet, hoeveel tijd dat kost en waar het wringt.</p>
+        </div>
+        <div style="grid-column: span 4; border-left: 3px solid #111827; padding-left: 14px;">
+          <strong>② Concrete verbeterpunten</strong>
+          <p class="muted small" style="margin:6px 0 0">Welke stappen zijn automatiseerbaar? Wat levert dat op in uren per week?</p>
+        </div>
+        <div style="grid-column: span 4; border-left: 3px solid #111827; padding-left: 14px;">
+          <strong>③ Eerlijk advies</strong>
+          <p class="muted small" style="margin:6px 0 0">We vertellen u ook als automatisering in uw geval niet de moeite waard is. Geen verkooppraatje.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="grid-column: span 6">
+      <h2 style="margin-top:0">Voor wie?</h2>
+      <ul class="muted">
+        <li>MKB-bedrijven tot 50 medewerkers</li>
+        <li>U besteedt wekelijks uren aan terugkerend handmatig werk</li>
+        <li>U werkt met meerdere tools die niet goed samenwerken</li>
+        <li>U vraagt zich af of automatisering rendabel is voor uw bedrijf</li>
+      </ul>
+    </div>
+
+    <div class="card" style="grid-column: span 6">
+      <h2 style="margin-top:0">Hoe werkt het?</h2>
+      <ol class="muted" style="padding-left:18px">
+        <li>U stuurt een korte aanvraag (onderstaande knop)</li>
+        <li>We plannen een gesprek van 30 minuten</li>
+        <li>U ontvangt een schriftelijke samenvatting + aanbeveling</li>
+        <li>Wilt u verder? Dan volgt een concreet voorstel met vaste prijs</li>
+      </ol>
+    </div>
+
+    <div class="card" style="grid-column: span 12; background:#f0f4ff; border-color:#c7d7f9">
+      <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:center">
+        <div style="flex:1; min-width:240px">
+          <h2 style="margin-top:0">Wat kost het?</h2>
+          <p class="muted">De quickscan zelf is <strong>gratis</strong>. Kiest u ervoor om door te gaan met de implementatie, dan start dat vanaf <strong>€750</strong> met vaste prijs.</p>
+          <p class="muted small">Geen verborgen kosten. Geen abonnementen. Geen verplichtingen na de scan.</p>
+        </div>
+        <div style="text-align:center; min-width:180px">
+          <div style="font-size:2.5rem;font-weight:800;letter-spacing:-0.03em">€0</div>
+          <div class="muted small">voor de quickscan</div>
+          <div style="margin:8px 0; color:#6b7280">→</div>
+          <div style="font-size:1.4rem;font-weight:700">v.a. €750</div>
+          <div class="muted small">voor implementatie (optioneel)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px; text-align:center">
+    <h2 style="margin-top:0">Klaar om te starten?</h2>
+    <p class="muted">Stuur een korte mail. We reageren binnen 1 werkdag met een voorstel voor een tijdstip.</p>
+    <a class="btn" href={bookingUrl} style="margin-top:12px; font-size:1.05rem; padding:12px 20px">
+      Vraag gratis quickscan aan →
+    </a>
+    <p class="muted small" style="margin-top:12px">Of bel / mail direct: <a href="mailto:jarvix.agent@protonmail.com">jarvix.agent@protonmail.com</a></p>
+  </div>
+</Base>
